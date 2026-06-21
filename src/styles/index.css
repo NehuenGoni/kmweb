@@ -1,0 +1,65 @@
+@import './theme.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-ink font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+  }
+
+  /* Focus visible accesible y consistente en toda la UI */
+  :where(a, button, input, textarea, select):focus-visible {
+    outline: 2px solid rgb(var(--color-brand));
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  ::selection {
+    background: rgb(var(--color-brand));
+    color: white;
+  }
+}
+
+@layer components {
+  /* Botón primario — la acción de mayor jerarquía (contacto) */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-brand bg-brand px-6 py-3
+           font-semibold text-white shadow-soft transition-all duration-150 ease-smooth
+           hover:-translate-y-0.5 hover:shadow-glow active:translate-y-0 active:scale-[0.98];
+  }
+
+  /* Botón secundario — acciones de apoyo */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-brand border border-ink/10
+           bg-white/60 px-6 py-3 font-semibold text-ink backdrop-blur transition-all
+           duration-150 ease-smooth hover:border-ink/20 hover:bg-white active:scale-[0.98];
+  }
+
+  /* Tarjeta base */
+  .card {
+    @apply rounded-brand border border-ink/[0.06] bg-white shadow-soft;
+  }
+
+  /* Contenedor de ancho máximo del sitio */
+  .container-km {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  /* Etiqueta tipo "eyebrow" sobre los títulos de sección */
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-brand;
+  }
+}

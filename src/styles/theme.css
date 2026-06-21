@@ -1,0 +1,43 @@
+/* =====================================================================
+   SISTEMA DE MARCA — KM Computación
+   ---------------------------------------------------------------------
+   Paleta oficial según Brandbook KM Computación (Junio 2026).
+   Este es el ÚNICO lugar donde se define la paleta del sitio.
+
+   IMPORTANTE: los colores van como canales "R G B" (separados por espacios),
+   no como #hex. Esto permite que el sitio aplique transparencias.
+   Para convertir un #hex a "R G B": https://rgbacolorpicker.com/hex-to-rgb
+   ===================================================================== */
+
+:root {
+  /* --- Rojos de marca (brandbook §05) --- */
+  --color-brand: 204 34 40;       /* #CC2228 — KM Rojo: botones, links, identidad */
+  --color-brand-hover: 153 26 31; /* #991A1F — Rojo Oscuro: hover, profundidad */
+  --color-accent: 232 72 80;      /* #E84850 — Rojo Claro: acentos secundarios */
+
+  /* --- Fondos oscuros --- */
+  --color-brand-dark: 45 45 45;   /* #2D2D2D — Carbón: navbar, footer, fondos oscuros */
+
+  /* --- Neutrales --- */
+  --color-ink: 45 45 45;          /* #2D2D2D — Carbón: texto principal */
+  --color-muted: 140 140 140;     /* #8C8C8C — Gris Medio: textos secundarios, captions */
+  --color-bg: 255 255 255;        /* #FFFFFF — Blanco: fondo principal */
+  --color-bg-subtle: 242 242 242; /* #F2F2F2 — Gris Claro: fondos de sección, cards */
+
+  /* --- Uso reservado B2B --- */
+  --color-corporate: 26 58 92;    /* #1A3A5C — Azul Corporativo: presentaciones B2B */
+
+  /* --- Forma --- */
+  --radius: 1rem; /* radio de borde base de tarjetas/botones */
+
+  /* --- Tira fija de marcas (BrandMarquee) ---
+     Alto de la franja inferior. Se reutiliza para reservar espacio en el
+     layout (padding-bottom) y para subir el botón de WhatsApp por encima. */
+  --marquee-h: 3.25rem;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --marquee-h: 3.75rem;
+  }
+}
