@@ -50,6 +50,7 @@ export const services = [
   {
     id: 'venta-equipos',
     icon: 'Monitor',
+    image: '/PC.png',
     title: 'Venta de equipos',
     short: 'PCs, notebooks y armados a medida.',
     description:
@@ -65,6 +66,7 @@ export const services = [
   {
     id: 'insumos',
     icon: 'Cable',
+    image: '/Memoria.jpg',
     title: 'Insumos y accesorios',
     short: 'Componentes, almacenamiento y consumibles.',
     description:
@@ -80,6 +82,7 @@ export const services = [
   {
     id: 'servicio-tecnico',
     icon: 'Wrench',
+    image: '/Taller.jpg',
     title: 'Servicio técnico',
     short: 'Reparación y mantenimiento de PC y notebooks.',
     description:
@@ -95,6 +98,7 @@ export const services = [
   {
     id: 'redes-cctv',
     icon: 'Network',
+    image: '/network Rack.webp',
     title: 'Redes y CCTV',
     short: 'Instalación de redes y cámaras de seguridad.',
     description:
@@ -129,23 +133,28 @@ export const categories = [
 export const catalogFilters = ['Todos', 'Equipos', 'Insumos', 'Servicio', 'Redes']
 
 /* --- Marcas con las que trabajamos (tira inferior) ---
-   Placeholders por ahora: se muestran como wordmarks de texto.
-   Cuando tengas los archivos reales, dejalos en public/marcas/ y completá
-   `logo` (ej. '/marcas/intel.svg'); el componente usará la imagen en vez del texto.
-   `color`: se usa para teñir el logo al pasar el mouse. */
+   Logos reales en public/marcas/. Se muestran como siluetas monocromas y
+   recuperan su color original al pasar el mouse.
+   `logo`: ruta al archivo (respetá mayúsculas: el server de producción
+   distingue may/min). Si queda vacío, se cae a un wordmark con el `name`.
+   `color`: tinte de respaldo del wordmark cuando no hay imagen. */
 export const brands = [
-  { name: 'Intel', color: '#0071C5', logo: '' },
-  { name: 'AMD', color: '#ED1C24', logo: '' },
-  { name: 'NVIDIA', color: '#76B900', logo: '' },
-  { name: 'HP', color: '#0096D6', logo: '' },
-  { name: 'Dell', color: '#007DB8', logo: '' },
-  { name: 'Lenovo', color: '#E2231A', logo: '' },
-  { name: 'ASUS', color: '#00539B', logo: '' },
-  { name: 'Logitech', color: '#00B8FC', logo: '' },
-  { name: 'Kingston', color: '#E2001A', logo: '' },
-  { name: 'Samsung', color: '#1428A0', logo: '' },
-  { name: 'TP-Link', color: '#4ACBD6', logo: '' },
-  { name: 'Epson', color: '#1A3A8F', logo: '' },
+  { name: 'Intel', color: '#0071C5', logo: '/marcas/Intel.png' },
+  { name: 'Ryzen', color: '#ED1C24', logo: '/marcas/Ryzen.png' },
+  { name: 'NVIDIA', color: '#76B900', logo: '/marcas/Nvidia.png' },
+  { name: 'GeForce', color: '#76B900', logo: '/marcas/GeForce.png' },
+  { name: 'HP', color: '#0096D6', logo: '/marcas/HP.png' },
+  { name: 'Dell', color: '#007DB8', logo: '/marcas/Dell.png' },
+  { name: 'Lenovo', color: '#E2231A', logo: '/marcas/Lenovo.png' },
+  { name: 'ASUS', color: '#00539B', logo: '/marcas/Asus.png' },
+  { name: 'Acer', color: '#83B81A', logo: '/marcas/Acer.png' },
+  { name: 'Logitech', color: '#00B8FC', logo: '/marcas/Logitech.png' },
+  { name: 'Kingston', color: '#E2001A', logo: '/marcas/Kingston.png' },
+  { name: 'Samsung', color: '#1428A0', logo: '/marcas/Samsung.png' },
+  { name: 'TP-Link', color: '#4ACBD6', logo: '/marcas/TP-Link.png' },
+  { name: 'Cisco', color: '#1BA0D7', logo: '/marcas/Cisco.png' },
+  { name: 'Ubiquiti', color: '#0559C9', logo: '/marcas/Ubiquiti.png' },
+  { name: 'Xerox', color: '#DA291C', logo: '/marcas/Xerox.png' },
 ]
 
 /* --- "Por qué elegirnos" (página Nosotros / Home) --- */

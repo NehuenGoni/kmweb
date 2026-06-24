@@ -1,15 +1,13 @@
 /**
  * Logo de KM Computación.
  *
- * La imagen en public/logo km.png tiene fondo blanco, así que:
- * - En la navbar (fondo claro/transparente) se usa directamente.
- * - En el footer (fondo oscuro) se envuelve en un contenedor blanco
- *   redondeado para que el fondo blanco quede integrado al diseño.
+ * La imagen en public/Logo KM.png tiene fondo transparente (PNG RGBA), así que
+ * el isotipo se usa directamente sobre cualquier fondo (navbar y footer oscuros).
  *
  * Para actualizar el logo: reemplazá el archivo public/Logo KM.png.
  */
-export default function Logo({ className = '', inFooter = false }) {
-  const img = (
+export default function Logo({ className = '' }) {
+  return (
     <img
       src="/Logo KM.png"
       alt="KM Computación"
@@ -17,14 +15,4 @@ export default function Logo({ className = '', inFooter = false }) {
       draggable={false}
     />
   )
-
-  if (inFooter) {
-    return (
-      <span className="inline-flex items-center rounded-xl bg-white px-3 py-2 shadow-sm">
-        {img}
-      </span>
-    )
-  }
-
-  return img
 }

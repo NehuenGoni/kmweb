@@ -38,24 +38,40 @@ export default function Servicios() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.55, ease: easeSmooth }}
-            className="scroll-mt-24 overflow-hidden rounded-[1.5rem] border border-ink/[0.06] bg-white shadow-soft"
+            className="group scroll-mt-24 overflow-hidden rounded-[1.5rem] border border-ink/[0.06] bg-white shadow-soft transition-all duration-300 ease-smooth hover:-translate-y-1 hover:shadow-glow"
           >
             <div className="grid gap-0 md:grid-cols-[0.9fr_1.1fr]">
               {/* Panel visual */}
               <div
-                className={`relative flex items-center justify-center bg-gradient-to-br from-brand-dark to-brand p-10 text-white ${
-                  i % 2 === 1 ? 'md:order-2' : ''
-                }`}
+                className={`relative flex min-h-[260px] items-center justify-center overflow-hidden p-10 text-white ${
+                  service.image ? '' : 'bg-gradient-to-br from-brand-dark to-brand'
+                } ${i % 2 === 1 ? 'md:order-2' : ''}`}
               >
-                <div className="pointer-events-none absolute inset-0 opacity-40 [background:radial-gradient(circle_at_30%_30%,theme(colors.accent/30),transparent_60%)]" />
-                <div className="relative text-center">
-                  <span className="inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-white/10 backdrop-blur">
-                    <Icon name={service.icon} size={40} strokeWidth={1.6} />
-                  </span>
-                  <p className="mt-4 text-sm font-semibold uppercase tracking-[0.2em] text-accent">
-                    {service.short}
-                  </p>
-                </div>
+                {service.image ? (
+                  <>
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-smooth group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
+                    <p className="absolute inset-x-8 bottom-7 text-sm font-semibold uppercase tracking-[0.2em] text-white">
+                      {service.short}
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <div className="pointer-events-none absolute inset-0 opacity-40 [background:radial-gradient(circle_at_30%_30%,theme(colors.accent/30),transparent_60%)]" />
+                    <div className="relative text-center">
+                      <span className="inline-flex h-20 w-20 items-center justify-center rounded-3xl bg-white/10 backdrop-blur">
+                        <Icon name={service.icon} size={40} strokeWidth={1.6} />
+                      </span>
+                      <p className="mt-4 text-sm font-semibold uppercase tracking-[0.2em] text-accent">
+                        {service.short}
+                      </p>
+                    </div>
+                  </>
+                )}
               </div>
 
               {/* Contenido */}

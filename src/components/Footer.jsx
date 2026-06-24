@@ -7,12 +7,12 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="mt-24 bg-brand-dark text-white/80">
+    <footer className="mt-12 bg-brand-dark text-white/80">
       <div className="container-km grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
         {/* Marca */}
         <div className="lg:col-span-1">
           <Link to="/" aria-label="KM Computación — Inicio">
-            <Logo className="h-9 w-auto" inFooter />
+            <Logo className="h-9 w-auto" />
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
             {business.description}

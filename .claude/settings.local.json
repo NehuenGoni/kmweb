@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npx skills:*)",
       "Bash(npx skills@latest add nexu-io/open-design@taste-skill -g -y)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "PowerShell(npm run build 2>&1)"
     ]
   }
 }

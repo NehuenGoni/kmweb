@@ -10,7 +10,8 @@ function BrandItem({ brand }) {
       <img
         src={logo}
         alt={name}
-        className="h-5 w-auto shrink-0 opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 sm:h-6"
+        title={name}
+        className="h-5 w-auto max-w-[6rem] shrink-0 object-contain opacity-70 brightness-0 invert transition duration-300 hover:opacity-100 hover:brightness-100 hover:invert-0 sm:h-6"
         loading="lazy"
       />
     )
@@ -38,10 +39,16 @@ export default function BrandMarquee() {
   return (
     <aside
       aria-label="Marcas con las que trabajamos"
-      className="fixed inset-x-0 bottom-0 z-40 flex items-center gap-4 border-t border-white/10 bg-brand-dark px-4 sm:px-6"
+      className="fixed inset-x-0 bottom-0 z-40 flex items-center gap-4 bg-brand-dark px-4 sm:px-6"
       style={{ height: 'var(--marquee-h)' }}
     >
-      <span className="hidden shrink-0 text-xs font-semibold uppercase tracking-[0.18em] text-white/40 sm:inline">
+      {/* Difuminado superior: la franja emerge suavemente del contenido */}
+      <div
+        className="pointer-events-none absolute inset-x-0 -top-6 h-6 bg-gradient-to-t from-brand-dark to-transparent"
+        aria-hidden="true"
+      />
+
+      <span className="hidden shrink-0 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/40 sm:inline">
         Trabajamos&nbsp;con
       </span>
 

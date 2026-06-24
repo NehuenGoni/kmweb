@@ -33,11 +33,11 @@
   /* --- Tira fija de marcas (BrandMarquee) ---
      Alto de la franja inferior. Se reutiliza para reservar espacio en el
      layout (padding-bottom) y para subir el botón de WhatsApp por encima. */
-  --marquee-h: 3.25rem;
+  --marquee-h: 2.5rem;
 }
 
 @media (min-width: 640px) {
   :root {
-    --marquee-h: 3.75rem;
+    --marquee-h: 3rem;
   }
 }

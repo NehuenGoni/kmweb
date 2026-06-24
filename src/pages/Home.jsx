@@ -12,12 +12,12 @@ export default function Home() {
   return (
     <>
       {/* ===================== HERO ===================== */}
-      <section className="relative overflow-hidden bg-brand-dark text-white">
+      <section className="relative -mt-11 overflow-hidden bg-brand-dark text-white sm:-mt-12">
         {/* Glow decorativo */}
         <div className="pointer-events-none absolute -right-40 -top-40 h-[28rem] w-[28rem] rounded-full bg-brand/30 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-40 -left-40 h-[26rem] w-[26rem] rounded-full bg-accent/20 blur-3xl" />
 
-        <div className="container-km relative grid items-center gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:py-28">
+        <div className="container-km relative grid items-center gap-12 pb-20 pt-20 lg:grid-cols-[1.1fr_0.9fr] lg:pb-28 lg:pt-28">
           <div>
             <motion.span
               initial={{ opacity: 0, y: 14 }}

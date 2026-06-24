@@ -35,15 +35,13 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-40 transition-all duration-300 ease-smooth ${
-        scrolled
-          ? 'border-b border-ink/[0.06] bg-white/80 backdrop-blur-lg'
-          : 'border-b border-transparent bg-transparent'
+      className={`sticky top-0 z-40 border-b border-white/10 backdrop-blur-xl transition-all duration-300 ease-smooth ${
+        scrolled ? 'bg-ink/80 shadow-soft' : 'bg-ink/60'
       }`}
     >
-      <nav className="container-km flex h-16 items-center justify-between sm:h-20">
-        <Link to="/" className="text-ink" aria-label="KM Computación — Inicio">
-          <Logo className="h-9 w-auto sm:h-10" />
+      <nav className="container-km flex h-11 items-center justify-between sm:h-12">
+        <Link to="/" aria-label="KM Computación — Inicio">
+          <Logo className="h-7 w-auto sm:h-8" />
         </Link>
 
         {/* Links desktop */}
@@ -55,7 +53,7 @@ export default function Navbar() {
                 end={link.to === '/'}
                 className={({ isActive }) =>
                   `relative rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-150 ${
-                    isActive ? 'text-brand' : 'text-ink/70 hover:text-ink'
+                    isActive ? 'text-white' : 'text-white/70 hover:text-white'
                   }`
                 }
               >
@@ -65,7 +63,7 @@ export default function Navbar() {
                     {isActive && (
                       <motion.span
                         layoutId="nav-active"
-                        className="absolute inset-0 -z-10 rounded-full bg-brand/10"
+                        className="absolute inset-0 -z-10 rounded-full bg-white/10"
                         transition={{ duration: 0.3, ease: easeSmooth }}
                       />
                     )}
@@ -88,7 +86,7 @@ export default function Navbar() {
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={open}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-ink/10 bg-white/60 text-ink backdrop-blur transition-colors hover:bg-white md:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white backdrop-blur transition-colors hover:bg-white/20 md:hidden"
           >
             <AnimatePresence mode="wait" initial={false}>
               <motion.span
@@ -116,7 +114,7 @@ export default function Navbar() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
               onClick={() => setOpen(false)}
-              className="fixed inset-0 top-16 z-30 bg-ink/40 backdrop-blur-sm md:hidden"
+              className="fixed inset-0 top-11 z-30 bg-ink/40 backdrop-blur-sm md:hidden"
             />
             <motion.div
               key="sheet"
@@ -124,7 +122,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
               transition={{ duration: 0.3, ease: easeSmooth }}
-              className="fixed inset-x-0 top-16 z-30 mx-3 rounded-brand border border-ink/[0.06] bg-white p-3 shadow-soft md:hidden"
+              className="fixed inset-x-0 top-11 z-30 mx-3 rounded-brand border border-white/10 bg-ink/90 p-3 shadow-soft backdrop-blur-xl md:hidden"
             >
               <ul className="flex flex-col">
                 {navLinks.map((link, i) => (
@@ -140,8 +138,8 @@ export default function Navbar() {
                       className={({ isActive }) =>
                         `block rounded-2xl px-4 py-3 text-base font-semibold transition-colors ${
                           isActive
-                            ? 'bg-brand/10 text-brand'
-                            : 'text-ink/80 hover:bg-ink/[0.04]'
+                            ? 'bg-white/10 text-white'
+                            : 'text-white/80 hover:bg-white/5'
                         }`
                       }
                     >
