@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { MapPin, MonitorSmartphone } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
 import Icon from '../components/Icon'
+import GoogleReviews from '../components/GoogleReviews'
 import { business, reasons } from '../data/site'
 
 const easeSmooth = [0.16, 1, 0.3, 1]
@@ -41,33 +42,6 @@ export default function Nosotros() {
             <p className="text-sm font-semibold">Foto del local</p>
           </div>
         </motion.div>
-      </div>
-
-      {/* Por qué elegirnos */}
-      <div className="container-km mt-24">
-        <SectionHeading
-          eyebrow="Por qué elegirnos"
-          title="Lo que nos distingue"
-          align="center"
-        />
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {reasons.map((r, i) => (
-            <motion.div
-              key={r.title}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.5, ease: easeSmooth, delay: i * 0.06 }}
-              className="card p-6 text-center"
-            >
-              <span className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand/10 text-brand">
-                <Icon name={r.icon} size={24} />
-              </span>
-              <h3 className="mt-4 text-lg font-bold text-ink">{r.title}</h3>
-              <p className="mt-2 text-sm text-ink/60">{r.text}</p>
-            </motion.div>
-          ))}
-        </div>
       </div>
 
       {/* Ubicación */}
@@ -111,6 +85,36 @@ export default function Nosotros() {
           </div>
         </div>
       </div>
+
+      {/* Por qué elegirnos */}
+      <div className="container-km mt-24">
+        <SectionHeading
+          eyebrow="Por qué elegirnos"
+          title="Lo que nos distingue"
+          align="center"
+        />
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {reasons.map((r, i) => (
+            <motion.div
+              key={r.title}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, ease: easeSmooth, delay: i * 0.06 }}
+              className="card p-6 text-center"
+            >
+              <span className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand/10 text-brand">
+                <Icon name={r.icon} size={24} />
+              </span>
+              <h3 className="mt-4 text-lg font-bold text-ink">{r.title}</h3>
+              <p className="mt-2 text-sm text-ink/60">{r.text}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* Reseñas de Google (no renderiza si la API falla o no hay reseñas) */}
+      <GoogleReviews />
     </div>
   )
 }

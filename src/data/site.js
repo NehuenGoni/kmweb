@@ -15,7 +15,7 @@ export const business = {
 
   phone: '+54 02320 480785',
   whatsapp: '541123971402', // solo números, con código de país (sin + ni espacios)
-  email: 'contacto@kmcomputacion.com',
+  email: 'ventas@kmcomputacion.com.ar',
   address: 'Av. El Callao 1577, Grand Bourg, Buenos Aires',
   mapsLink: 'https://maps.app.goo.gl/95VUZDDEL4wqqudC6',
   mapsEmbed:
