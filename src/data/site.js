@@ -26,7 +26,7 @@ export const business = {
     { day: 'Domingos', time: 'Cerrado' },
   ],
   social: {
-    instagram: '', // TODO: ej. 'https://instagram.com/kmcomputacion'
+    instagram: 'https://www.instagram.com/kmcomputacion',
     facebook: '',
   },
 

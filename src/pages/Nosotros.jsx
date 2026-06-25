@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { MapPin, MonitorSmartphone } from 'lucide-react'
+import { MonitorSmartphone } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
 import Icon from '../components/Icon'
 import GoogleReviews from '../components/GoogleReviews'
@@ -42,48 +42,6 @@ export default function Nosotros() {
             <p className="text-sm font-semibold">Foto del local</p>
           </div>
         </motion.div>
-      </div>
-
-      {/* Ubicación */}
-      <div className="container-km mt-24">
-        <div className="grid items-stretch gap-8 overflow-hidden rounded-[1.5rem] border border-ink/[0.06] bg-white shadow-soft lg:grid-cols-2">
-          <div className="p-8 sm:p-10">
-            <span className="eyebrow">Dónde estamos</span>
-            <h2 className="mt-3 text-2xl font-bold text-ink sm:text-3xl">
-              Pasá a visitarnos
-            </h2>
-            <a
-              href={business.mapsLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-3 flex items-start gap-2.5 text-ink/70 transition-colors hover:text-brand"
-            >
-              <MapPin size={20} className="mt-0.5 shrink-0 text-brand" />
-              {business.address}
-            </a>
-            <div className="mt-6 space-y-2">
-              {business.hours.map((h) => (
-                <div
-                  key={h.day}
-                  className="flex items-center justify-between border-b border-ink/[0.06] py-2 text-sm"
-                >
-                  <span className="font-semibold text-ink">{h.day}</span>
-                  <span className="text-ink/60">{h.time}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="min-h-[320px] bg-ink/5">
-            <iframe
-              title="Ubicación de KM Computación"
-              src={business.mapsEmbed}
-              className="h-full min-h-[320px] w-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-          </div>
-        </div>
       </div>
 
       {/* Por qué elegirnos */}

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, MessageCircle, Sparkles } from 'lucide-react'
+import { ArrowRight, MessageCircle, Sparkles, Instagram } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
 import ServiceCard from '../components/ServiceCard'
 import Icon from '../components/Icon'
@@ -73,6 +73,17 @@ export default function Home() {
                 Empresas que confían
                 <ArrowRight size={18} />
               </Link>
+              {business.social.instagram && (
+                <a
+                  href={business.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 rounded-brand border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur transition-all duration-150 ease-smooth hover:bg-white/10"
+                >
+                  <Instagram size={18} />
+                  Seguinos
+                </a>
+              )}
             </motion.div>
           </div>
 
