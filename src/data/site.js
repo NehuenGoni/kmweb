@@ -13,7 +13,7 @@ export const business = {
     'Venta de equipos, insumos, servicio técnico y soluciones de redes. ' +
     'Te asesoramos para que compres lo que realmente necesitás.',
 
-  phone: '+54 02320 480785',
+  phone: '+54 11 2397-1402',
   whatsapp: '541123971402', // solo números, con código de país (sin + ni espacios)
   email: 'ventas@kmcomputacion.com.ar',
   address: 'Av. El Callao 1577, Grand Bourg, Buenos Aires',
@@ -113,24 +113,24 @@ export const services = [
   },
 ]
 
-/* --- Categorías del catálogo (vitrina, sin precios) ---
-   image: ruta opcional a una foto real; si falta, se muestra el ícono.
-   rubro: agrupa para el filtro del catálogo. */
-export const categories = [
-  { id: 'notebooks', rubro: 'Equipos', icon: 'Laptop', name: 'Notebooks', image: '' },
-  { id: 'pcs', rubro: 'Equipos', icon: 'Monitor', name: 'PCs de escritorio', image: '' },
-  { id: 'armado', rubro: 'Equipos', icon: 'Cpu', name: 'Armado a medida', image: '' },
-  { id: 'monitores', rubro: 'Equipos', icon: 'MonitorSmartphone', name: 'Monitores', image: '' },
-  { id: 'componentes', rubro: 'Insumos', icon: 'MemoryStick', name: 'Componentes', image: '' },
-  { id: 'perifericos', rubro: 'Insumos', icon: 'Keyboard', name: 'Periféricos', image: '' },
-  { id: 'consumibles', rubro: 'Insumos', icon: 'Printer', name: 'Cartuchos y tóner', image: '' },
-  { id: 'reparacion', rubro: 'Servicio', icon: 'Wrench', name: 'Reparaciones', image: '' },
-  { id: 'redes', rubro: 'Redes', icon: 'Network', name: 'Redes', image: '' },
-  { id: 'cctv', rubro: 'Redes', icon: 'Cctv', name: 'Cámaras CCTV', image: '' },
-  { id: 'impresoras', rubro: 'Redes', icon: 'Printer', name: 'Impresoras', image: '' },
+/* --- Empresas que confían en nosotros (clientes / trabajos B2B) ---
+   Se listan en la página /clientes con su logo. Los archivos viven en
+   public/empresas/ (respetá mayúsculas y espacios: el server de producción
+   distingue may/min). Si `logo` queda vacío, la tarjeta cae a un wordmark
+   con el `name` hasta que se cargue la imagen real. */
+export const clientes = [
+  { name: 'Conurbano Distribución', logo: '/empresas/Conurbano%20distribucion.png' },
+  { name: 'Laboratorios Fortunato', logo: '/empresas/laboratorios%20fortunato.png' },
+  { name: 'Bai Logística', logo: '/empresas/bailogo.png' },
+  { name: 'Winerod', logo: '/empresas/LogoWinerod.png' },
+  { name: 'Ekotienda', logo: '' }, // TODO: subir logo a public/empresas/ y completar la ruta
+  { name: 'Grupo del Pilar', logo: '/empresas/grupodelpilar.png', large: true },
+  { name: 'Distribuidora del Norte', logo: '/empresas/distribuidora%20del%20norte.png', large: true },
+  { name: 'Rumbo al Norte', logo: '/empresas/rumbo%20al%20norte.png', large: true },
+  { name: 'Farmacias Grupo Ota', logo: '/empresas/grupo%20ota.png' },
+  { name: 'Metalúrgica del Viso', logo: '/empresas/metalurgica%20del%20visp.png' },
+  { name: 'Mostaza', logo: '/empresas/Mostaza.png' },
 ]
-
-export const catalogFilters = ['Todos', 'Equipos', 'Insumos', 'Servicio', 'Redes']
 
 /* --- Marcas con las que trabajamos (tira inferior) ---
    Logos reales en public/marcas/. Se muestran como siluetas monocromas y
@@ -185,7 +185,7 @@ export const reasons = [
 export const navLinks = [
   { to: '/', label: 'Inicio' },
   { to: '/servicios', label: 'Servicios' },
-  { to: '/catalogo', label: 'Catálogo' },
+  { to: '/clientes', label: 'Confían en nosotros' },
   { to: '/nosotros', label: 'Nosotros' },
   { to: '/contacto', label: 'Contacto' },
 ]

@@ -67,10 +67,10 @@ export default function Home() {
                 Consultar por WhatsApp
               </a>
               <Link
-                to="/catalogo"
+                to="/clientes"
                 className="inline-flex items-center justify-center gap-2 rounded-brand border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur transition-all duration-150 ease-smooth hover:bg-white/10"
               >
-                Ver catálogo
+                Empresas que confían
                 <ArrowRight size={18} />
               </Link>
             </motion.div>

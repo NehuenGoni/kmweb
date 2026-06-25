@@ -9,7 +9,7 @@ import PageTransition from './components/PageTransition'
 import { navLinks } from './data/site'
 import Home from './pages/Home'
 import Servicios from './pages/Servicios'
-import Catalogo from './pages/Catalogo'
+import Clientes from './pages/Clientes'
 import Nosotros from './pages/Nosotros'
 import Contacto from './pages/Contacto'
 
@@ -49,7 +49,7 @@ export default function App() {
             <Routes location={location}>
               <Route path="/" element={<Home />} />
               <Route path="/servicios" element={<Servicios />} />
-              <Route path="/catalogo" element={<Catalogo />} />
+              <Route path="/clientes" element={<Clientes />} />
               <Route path="/nosotros" element={<Nosotros />} />
               <Route path="/contacto" element={<Contacto />} />
               <Route path="*" element={<Home />} />
