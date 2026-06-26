@@ -4,7 +4,9 @@
       "Bash(npx skills:*)",
       "Bash(npx skills@latest add nexu-io/open-design@taste-skill -g -y)",
       "Bash(npm run *)",
-      "PowerShell(npm run build 2>&1)"
+      "PowerShell(npm run build 2>&1)",
+      "Bash(grep -rEB2 -A10 \"declare function Head\" node_modules/vite-react-ssg/dist/shared/vite-react-ssg.-NlgsPvg.d.ts)",
+      "PowerShell($p = Start-Process npm -ArgumentList \"run\",\"dev\" -PassThru -NoNewWindow -RedirectStandardOutput \"$env:TEMP\\\\km_dev.log\" -RedirectStandardError \"$env:TEMP\\\\km_dev.err\"; Start-Sleep -Seconds 7; $url = \"http://localhost:5173/\"; try { $r = Invoke-WebRequest -Uri $url -UseBasicParsing -TimeoutSec 10; \"STATUS: $\\($r.StatusCode\\)\"; if \\($r.Content -match 'id=\"root\"'\\) { \"root div presente OK\" } } catch { \"ERROR: $_\" }; \"--- dev log \\(errores\\) ---\"; if \\(Test-Path \"$env:TEMP\\\\km_dev.err\"\\) { Get-Content \"$env:TEMP\\\\km_dev.err\" -Tail 15 }; Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue; Get-Process node -ErrorAction SilentlyContinue | Stop-Process -Force -ErrorAction SilentlyContinue)"
     ]
   }
 }

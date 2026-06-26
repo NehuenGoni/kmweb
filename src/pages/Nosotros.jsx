@@ -3,6 +3,7 @@ import { MonitorSmartphone } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
 import Icon from '../components/Icon'
 import GoogleReviews from '../components/GoogleReviews'
+import Seo from '../components/Seo'
 import { business, reasons } from '../data/site'
 
 const easeSmooth = [0.16, 1, 0.3, 1]
@@ -10,6 +11,11 @@ const easeSmooth = [0.16, 1, 0.3, 1]
 export default function Nosotros() {
   return (
     <div className="py-16 sm:py-20">
+      <Seo
+        title="Nosotros — KM Computación | Computación en Grand Bourg"
+        description="Tu local de computación de confianza en Grand Bourg. Años acompañando a vecinos, estudiantes y empresas con asesoramiento honesto, servicio cercano y garantía."
+        path="/nosotros"
+      />
       {/* Intro */}
       <div className="container-km grid items-center gap-12 lg:grid-cols-2">
         <div>

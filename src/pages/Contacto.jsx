@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, Clock, MessageCircle, Instagram } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
+import Seo from '../components/Seo'
 import { business, whatsappLink } from '../data/site'
 
 const easeSmooth = [0.16, 1, 0.3, 1]
@@ -14,6 +15,11 @@ export default function Contacto() {
 
   return (
     <div className="container-km py-16 sm:py-20">
+      <Seo
+        title="Contacto | KM Computación — Av. El Callao 1577, Grand Bourg"
+        description="Escribinos por WhatsApp o visitanos en Av. El Callao 1577, Grand Bourg, Buenos Aires. Teléfono, email, horarios y mapa de KM Computación."
+        path="/contacto"
+      />
       <SectionHeading
         eyebrow="Contacto"
         title="Hablemos, o pasá a visitarnos"

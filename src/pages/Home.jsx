@@ -4,6 +4,7 @@ import { ArrowRight, MessageCircle, Sparkles, Instagram } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
 import ServiceCard from '../components/ServiceCard'
 import Icon from '../components/Icon'
+import Seo from '../components/Seo'
 import { business, services, reasons, whatsappLink } from '../data/site'
 
 const easeSmooth = [0.16, 1, 0.3, 1]
@@ -11,6 +12,12 @@ const easeSmooth = [0.16, 1, 0.3, 1]
 export default function Home() {
   return (
     <>
+      <Seo
+        title="KM Computación | Venta de PC, insumos y servicio técnico en Grand Bourg"
+        description="Local de computación en Grand Bourg, zona norte de Buenos Aires. Venta de PCs y notebooks, insumos, servicio técnico y redes con asesoramiento honesto y garantía."
+        path="/"
+      />
+
       {/* ===================== HERO ===================== */}
       <section className="relative -mt-11 overflow-hidden bg-brand-dark text-white sm:-mt-12">
         {/* Glow decorativo */}

@@ -1,17 +1,68 @@
 import { useEffect, useRef } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { useLocation, useOutlet } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
+import { Head } from 'vite-react-ssg'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 import BrandMarquee from './components/BrandMarquee'
 import PageTransition from './components/PageTransition'
-import { navLinks } from './data/site'
-import Home from './pages/Home'
-import Servicios from './pages/Servicios'
-import Clientes from './pages/Clientes'
-import Nosotros from './pages/Nosotros'
-import Contacto from './pages/Contacto'
+import { business, navLinks } from './data/site'
+
+const SITE_URL = 'https://www.kmcomputacion.com.ar'
+
+/* Datos estructurados del negocio (JSON-LD). Es la clave del SEO local:
+   NAP consistente (nombre, dirección, teléfono), horarios, zona de servicio
+   y redes. Derivado de `business` (fuente única en data/site.js). */
+const localBusinessJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ComputerStore',
+  '@id': `${SITE_URL}/#business`,
+  name: business.name,
+  description: business.description,
+  url: SITE_URL,
+  image: `${SITE_URL}/Logo%20KM.png`,
+  logo: `${SITE_URL}/Logo%20KM.png`,
+  telephone: business.phone,
+  email: business.email,
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Av. El Callao 1577',
+    addressLocality: 'Grand Bourg',
+    addressRegion: 'Buenos Aires',
+    postalCode: '1615',
+    addressCountry: 'AR',
+  },
+  areaServed: [
+    'Grand Bourg',
+    'Malvinas Argentinas',
+    'Los Polvorines',
+    'Tortuguitas',
+    'Zona Norte GBA',
+  ],
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '13:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '16:30',
+      closes: '20:00',
+    },
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: 'Saturday',
+      opens: '09:00',
+      closes: '13:00',
+    },
+  ],
+  sameAs: [business.social.instagram, business.social.facebook].filter(Boolean),
+}
 
 /** Índice de una ruta dentro del nav (para decidir la dirección espacial). */
 function navIndex(pathname) {
@@ -21,6 +72,7 @@ function navIndex(pathname) {
 
 export default function App() {
   const location = useLocation()
+  const outlet = useOutlet()
   const prevIndex = useRef(navIndex(location.pathname))
 
   // Dirección de la transición: avanzar en el nav => entra desde la derecha.
@@ -41,19 +93,18 @@ export default function App() {
       className="flex min-h-screen flex-col"
       style={{ paddingBottom: 'var(--marquee-h)' }}
     >
+      <Head>
+        <script type="application/ld+json">
+          {JSON.stringify(localBusinessJsonLd)}
+        </script>
+      </Head>
+
       <Navbar />
 
       <div className="flex-1 overflow-x-clip">
         <AnimatePresence mode="wait">
           <PageTransition key={location.pathname} direction={direction}>
-            <Routes location={location}>
-              <Route path="/" element={<Home />} />
-              <Route path="/servicios" element={<Servicios />} />
-              <Route path="/clientes" element={<Clientes />} />
-              <Route path="/nosotros" element={<Nosotros />} />
-              <Route path="/contacto" element={<Contacto />} />
-              <Route path="*" element={<Home />} />
-            </Routes>
+            {outlet}
           </PageTransition>
         </AnimatePresence>
       </div>

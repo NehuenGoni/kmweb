@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
 import CompanyCard from '../components/CompanyCard'
+import Seo from '../components/Seo'
 import { clientes, whatsappLink } from '../data/site'
 
 const easeSmooth = [0.16, 1, 0.3, 1]
@@ -9,6 +10,11 @@ const easeSmooth = [0.16, 1, 0.3, 1]
 export default function Clientes() {
   return (
     <div className="container-km py-16 sm:py-20">
+      <Seo
+        title="Empresas que confían en KM Computación | Grand Bourg"
+        description="Damos soporte a empresas de logística, distribución, comercio y salud de Grand Bourg y zona norte: equipamiento, insumos, servicio técnico y redes."
+        path="/clientes"
+      />
       <SectionHeading
         eyebrow="Empresas"
         title="Empresas que confían en nosotros"

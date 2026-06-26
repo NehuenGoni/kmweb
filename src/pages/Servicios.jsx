@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { Check, MessageCircle } from 'lucide-react'
 import SectionHeading from '../components/SectionHeading'
 import Icon from '../components/Icon'
+import Seo from '../components/Seo'
 import { services, whatsappLink } from '../data/site'
 
 const easeSmooth = [0.16, 1, 0.3, 1]
@@ -23,6 +24,11 @@ export default function Servicios() {
 
   return (
     <div className="container-km py-16 sm:py-20">
+      <Seo
+        title="Servicio técnico de computadoras en Grand Bourg | KM Computación"
+        description="Reparación y mantenimiento de PCs y notebooks, venta de equipos e insumos, instalación de redes y CCTV en Grand Bourg y zona norte. Diagnóstico sin cargo."
+        path="/servicios"
+      />
       <SectionHeading
         eyebrow="Servicios"
         title="Soluciones completas en tecnología"
